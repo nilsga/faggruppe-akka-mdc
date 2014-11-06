@@ -1,0 +1,16 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>TIMESTAMP="%d{HH:mm:ss.SSS}" TRANSACTION="%X{transactionId}" THREAD="[%thread]" LEVEL="%-5level" LOGGER="%logger{36}" MESSAGE="%msg"%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+    </root>
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="org.apache" level="INFO"/>
+</configuration>
